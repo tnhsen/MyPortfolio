@@ -133,6 +133,7 @@ export default function App() {
   );
 }
 
+
 const styles = StyleSheet.create({
   appContainer: { flex: 1, backgroundColor: '#0F172A' },
   navbar: { flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 35, alignItems: 'center', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999, transition: '0.4s' },
