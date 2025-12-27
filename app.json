@@ -27,7 +27,7 @@
       "name": "ธานี ธงภักดิ์ | Full Stack Web Developer",
       "shortName": "TechPortfolio",
       "bundler": "metro",
-      "output": "single",
+      "output": "static",
       "baseUrl": "/MyPortfolio"
     },
     "extra": {
