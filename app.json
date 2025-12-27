@@ -25,7 +25,10 @@
     "web": {
       "favicon": "./assets/profile.jpg",
       "name": "ธานี ธงภักดิ์ | Full Stack Web Developer",
-      "shortName": "TechPortfolio"
+      "shortName": "TechPortfolio",
+      "bundler": "metro",
+      "output": "static",
+      "baseUrl": "/MyPortfolio"
     },
     "plugins": [
       "expo-font"

@@ -1,6 +1,7 @@
 {
   "name": "myportfolio",
   "version": "1.0.0",
+  "homepage": "https://tnhsen.github.io/MyPortfolio",
   "main": "index.js",
   "scripts": {
     "start": "expo start",
