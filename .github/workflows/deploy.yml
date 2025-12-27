@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [ main ] # หรือชื่อ branch หลักของคุณ
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -18,5 +18,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # โฟลเดอร์ที่ Expo สร้างให้
-          branch: gh-pages # Branch ที่จะใช้เก็บไฟล์หน้าเว็บ
+          folder: dist
+          branch: gh-pages
