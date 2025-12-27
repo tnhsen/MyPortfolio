@@ -30,6 +30,11 @@
       "output": "single",
       "baseUrl": "/MyPortfolio"
     },
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    },
     "plugins": [
       "expo-font"
     ]
