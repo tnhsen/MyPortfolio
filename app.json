@@ -23,7 +23,12 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/profile.jpg",
+      "name": "ธานี ธงภักดิ์ | Full Stack Web Developer",
+      "shortName": "TechPortfolio"
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
