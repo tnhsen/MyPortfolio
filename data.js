@@ -65,7 +65,7 @@ export const PROJECTS = [
       require("./assets/skillEx/p2.png"),
       require("./assets/skillEx/p3.png"),
     ],
-    desc: "แพลตฟอร์มแลกเปลี่ยนทักษะออนไลน์ โดยใช้ AI ช่วยในการจับคู่ มีระบบการรีวิวหลังจากแลกเปลี่ยนเพื่อเพิ่มเครดิตให้ผู้ใช้",
+    desc: "แพลตฟอร์มแลกเปลี่ยนทักษะออนไลน์ โดยใช้ AI ช่วยในการจับคู่ มีระบบการรีวิวหลังจากแลกเปลี่ยนเพื่อเพิ่มเครดิตให้ผู้ใช้อื่น",
     technologies: [".NET Framework", "C#", "LocalSQL", "Javascript"],
     role: "Backend Developer",
     learnings: ["การนำ AI เข้ามาใช้ในโปรเจค", "การสร้างออกแบบ Database ที่ซับซ้อน"],
