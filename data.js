@@ -104,5 +104,20 @@ export const PROJECTS = [
     isDeployed: true,
     visitLink: "https://tnhsen.github.io/DekwebInternships/",
   },
+  {
+    id: "4",
+    title: "Huay Bong Wind Turbine",
+    stack: "HTML",
+    images: [
+      require("./assets/dekwebITS/p1.png"), 
+    ],
+    desc: "เว็ปบล็อคแสดงข้อมูลกังหันลมห้วยบง",
+    technologies: ["HTML", "CSS", "Java script"],
+    role: "Project Manager",
+    learnings: ["การทำเว็ปบล็อคพร้อมเรียนรู้ลูกเล่นอย่าง parallax"],
+    link: "https://github.com/tnhsen/HuaiBongWindTurbine.git",
+    isDeployed: true,
+    visitLink: "https://tnhsen.github.io/HuaiBongWindTurbine/",
+  },
  
 ];
