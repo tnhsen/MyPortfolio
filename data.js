@@ -109,7 +109,11 @@ export const PROJECTS = [
     title: "Huay Bong Wind Turbine",
     stack: "HTML",
     images: [
-      require("./assets/dekwebITS/p1.png"), 
+      require("./assets/huaybong/hb1.png"), 
+      require("./assets/huaybong/hb2.png"), 
+      require("./assets/huaybong/hb3.png"), 
+      require("./assets/huaybong/hb4.png"), 
+
     ],
     desc: "เว็ปบล็อคแสดงข้อมูลกังหันลมห้วยบง",
     technologies: ["HTML", "CSS", "Java script"],
