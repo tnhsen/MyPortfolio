@@ -84,6 +84,14 @@ export default function HomeScreen({ navigation, onScroll }) {
     setIdx(index);
   };
 
+  const handleDotPress = (index) => {
+    setIdx(index);
+    flatRef.current?.scrollToOffset({
+      offset: index * (CARD_W + GAP),
+      animated: true,
+    });
+  };
+
   const downloadResume = () => { Linking.openURL(PROFILE.resume_url); };
 
   if (!PROFILE || !PROJECTS) return null;
@@ -95,6 +103,7 @@ export default function HomeScreen({ navigation, onScroll }) {
       onScroll={onScroll}
       scrollEventThrottle={16}
     >
+
       <View style={[styles.hero, !isMobile && styles.heroWeb]}>
         <View style={[styles.heroText, isMobile && { alignItems: "center" }]}>
           <Text style={styles.greeting}>{PROFILE.greeting}</Text>
@@ -165,13 +174,28 @@ export default function HomeScreen({ navigation, onScroll }) {
       <View style={styles.section}>
         <View style={styles.projectHeader}>
           <Text style={styles.sectionTitle}>Projects</Text>
+          
           <View style={styles.dotRow}>
-            {PROJECTS.map((_, i) => (<View key={i} style={[styles.dot, idx === i && styles.dotActive]} />))}
+            {PROJECTS.map((_, i) => (
+              <TouchableOpacity 
+                key={i} 
+                onPress={() => handleDotPress(i)}
+                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              >
+                <View style={[styles.dot, idx === i && styles.dotActive]} />
+              </TouchableOpacity>
+            ))}
           </View>
+
         </View>
         <FlatList
-          ref={flatRef} data={PROJECTS} horizontal showsHorizontalScrollIndicator={false}
-          snapToInterval={CARD_W + GAP} decelerationRate="fast" onMomentumScrollEnd={onMomentumScrollEnd}
+          ref={flatRef} 
+          data={PROJECTS} 
+          horizontal 
+          showsHorizontalScrollIndicator={false}
+          snapToInterval={CARD_W + GAP} 
+          decelerationRate="fast" 
+          onMomentumScrollEnd={onMomentumScrollEnd}
           contentContainerStyle={{ paddingHorizontal: isMobile ? 25 : 100 }}
           renderItem={({ item }) => (<ProjectCard item={item} CARD_W={CARD_W} GAP={GAP} navigation={navigation} />)}
         />
@@ -205,6 +229,7 @@ const styles = StyleSheet.create({
   dotRow: { flexDirection: "row", alignItems: "center" },
   dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: "#334155", marginLeft: 8 },
   dotActive: { backgroundColor: "#38BDF8", width: 22 },
+
   pCard: { backgroundColor: "#1E293B", borderRadius: 16, overflow: "hidden", borderWidth: 1, borderColor: "#334155" },
   pImgWrap: { width: "100%", aspectRatio: 16 / 9 },
   pImg: { width: "100%", height: "100%", resizeMode: "cover" },
