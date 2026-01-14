@@ -78,10 +78,12 @@ export default function HomeScreen({ navigation, onScroll }) {
     }
   }, [idx, CARD_W]);
 
-  const onMomentumScrollEnd = (e) => {
-    const contentOffset = e.nativeEvent.contentOffset.x;
+  const handleProjectScroll = (event) => {
+    const contentOffset = event.nativeEvent.contentOffset.x;
     const index = Math.round(contentOffset / (CARD_W + GAP));
-    setIdx(index);
+    if (index !== idx && index >= 0 && index < PROJECTS.length) {
+      setIdx(index);
+    }
   };
 
   const handleDotPress = (index) => {
@@ -103,7 +105,6 @@ export default function HomeScreen({ navigation, onScroll }) {
       onScroll={onScroll}
       scrollEventThrottle={16}
     >
-
       <View style={[styles.hero, !isMobile && styles.heroWeb]}>
         <View style={[styles.heroText, isMobile && { alignItems: "center" }]}>
           <Text style={styles.greeting}>{PROFILE.greeting}</Text>
@@ -174,7 +175,6 @@ export default function HomeScreen({ navigation, onScroll }) {
       <View style={styles.section}>
         <View style={styles.projectHeader}>
           <Text style={styles.sectionTitle}>Projects</Text>
-          
           <View style={styles.dotRow}>
             {PROJECTS.map((_, i) => (
               <TouchableOpacity 
@@ -186,7 +186,6 @@ export default function HomeScreen({ navigation, onScroll }) {
               </TouchableOpacity>
             ))}
           </View>
-
         </View>
         <FlatList
           ref={flatRef} 
@@ -195,7 +194,8 @@ export default function HomeScreen({ navigation, onScroll }) {
           showsHorizontalScrollIndicator={false}
           snapToInterval={CARD_W + GAP} 
           decelerationRate="fast" 
-          onMomentumScrollEnd={onMomentumScrollEnd}
+          onScroll={handleProjectScroll} 
+          scrollEventThrottle={16}
           contentContainerStyle={{ paddingHorizontal: isMobile ? 25 : 100 }}
           renderItem={({ item }) => (<ProjectCard item={item} CARD_W={CARD_W} GAP={GAP} navigation={navigation} />)}
         />
@@ -229,7 +229,6 @@ const styles = StyleSheet.create({
   dotRow: { flexDirection: "row", alignItems: "center" },
   dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: "#334155", marginLeft: 8 },
   dotActive: { backgroundColor: "#38BDF8", width: 22 },
-
   pCard: { backgroundColor: "#1E293B", borderRadius: 16, overflow: "hidden", borderWidth: 1, borderColor: "#334155" },
   pImgWrap: { width: "100%", aspectRatio: 16 / 9 },
   pImg: { width: "100%", height: "100%", resizeMode: "cover" },
