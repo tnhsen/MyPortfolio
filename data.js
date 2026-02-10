@@ -22,7 +22,7 @@ export const SKILL_GROUPS = [
     skills: [
       { name: ".NET FRAMEWORK", icon: "dot-net" },
       { name: "SQL", icon: "database" },
-      { name: "Python", icon: "language-python" },
+      // { name: "Python", icon: "language-python" },
       { name: "Java", icon: "language-java" },
     ],
   },
@@ -73,24 +73,9 @@ export const PROJECTS = [
     isDeployed: false,
     visitLink: "",
   },
+  
   {
     id: "2",
-    title: "Splitit",
-    stack: "Flask",
-    images: [
-      require("./assets/splitit/p1.png"), 
-      require("./assets/splitit/p2.png"),
-    ],
-    desc: "ระบบหารค่าใช้จ่ายกับกลุ่มเพื่อนที่มีการคำนวณที่ซับซ้อน เช่น เมื่อมีการสำรองจ่ายก่อนมากกว่า 1 คน, เมื่อแต่ละคนสำรองจ่ายไม่เท่ากัน",
-    technologies: ["Python", "MangoDb Atlas"],
-    role: "Project Manager",
-    learnings: ["การใช้ Python เขียนเว็ป", "การใช้ MangoDb Atlas"],
-    link: "https://github.com/tnhsen/Splitit.git",
-    isDeployed: true,
-    visitLink: "https://splitit-1ept.onrender.com/",
-  },
-  {
-    id: "3",
     title: "DekwebInternships",
     stack: "HTML",
     images: [
@@ -105,7 +90,7 @@ export const PROJECTS = [
     visitLink: "https://tnhsen.github.io/DekwebInternships/",
   },
   {
-    id: "4",
+    id: "3",
     title: "Huay Bong Wind Turbine",
     stack: "HTML",
     images: [
@@ -123,5 +108,20 @@ export const PROJECTS = [
     isDeployed: true,
     visitLink: "https://tnhsen.github.io/HuaiBongWindTurbine/",
   },
- 
+//  {
+//     id: "4",
+//     title: "Splitit",
+//     stack: "Flask",
+//     images: [
+//       require("./assets/splitit/p1.png"), 
+//       require("./assets/splitit/p2.png"),
+//     ],
+//     desc: "ระบบหารค่าใช้จ่ายกับกลุ่มเพื่อนที่มีการคำนวณที่ซับซ้อน เช่น เมื่อมีการสำรองจ่ายก่อนมากกว่า 1 คน, เมื่อแต่ละคนสำรองจ่ายไม่เท่ากัน",
+//     technologies: ["Python", "MangoDb Atlas"],
+//     role: "Project Manager",
+//     learnings: ["การใช้ Python เขียนเว็ป", "การใช้ MangoDb Atlas"],
+//     link: "https://github.com/tnhsen/Splitit.git",
+//     isDeployed: true,
+//     visitLink: "https://splitit-1ept.onrender.com/",
+//   },
 ];
